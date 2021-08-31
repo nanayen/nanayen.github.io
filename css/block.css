@@ -1,0 +1,136 @@
+/* 手機畫面 */
+
+.phone {
+	background-color: #fafafa;
+	padding: 10px;
+}
+
+.border {
+	border: 2px solid var(--major);
+	width: 100%;
+	height: 100%;
+}
+
+.border.--hide {
+	border-color: rgba(0,0,0,0)!important;
+}
+
+.block-title {
+	display: flex;
+	align-items: center;
+	height: 120px;
+	width: 100%;
+	padding: 0 15%;
+	overflow: hidden;
+}
+
+.block-title-text {
+	color: #481e6b;
+	font-size: 26px;
+	line-height: 1.3333;
+	text-align: center;
+	white-space: pre-wrap;
+	word-break: break-all;
+	width: 100%;
+}
+
+.divider {
+	background-color: var(--major);
+	opacity: .5;
+	display: block;
+	width: 70%;
+	height: 2px;
+	margin: 0 auto 30px auto;
+}
+
+.divider.--hide {
+	opacity: 0!important;
+}
+
+.block-desc{
+	width: 100%;
+	height: 475px;
+	padding: 0 15%;
+	overflow: hidden;
+}
+
+.block-desc-text {
+	text-align: center;
+	font-size: 14px;
+	color: #532a75;
+	white-space: pre-wrap;
+	word-break: break-all;
+	line-height: 32px;
+	display: block;
+	line-height: 1.3333;
+}
+
+#Logo {
+	opacity: .75;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+}
+
+#Logo.--hide{
+	opacity: 0!important;
+}
+
+#Image{
+	display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+	z-index: -1;
+	pointer-events: none;
+}
+
+canvas {
+	display: none;
+}
+
+/* 個別設定 */
+
+#Board-Img{
+	display: none;
+}
+
+#Titlebox, #Textbox {
+	height: 70px;
+	resize: none;
+	cursor: text;
+	vertical-align: bottom;
+}
+
+#Titlebox {
+	height: 60px;
+}
+
+#Textbox{
+	height: 340px;
+}
+
+.back-set{
+	display: none;
+}
+
+.back-set.--show{
+	display: block;
+}
+
+.checkbox-btn{
+	padding: 1px;
+	background-color: #cfcfcf;
+}
+
+.checkbox-desc{
+	font-size: 14px;
+	color: #777;
+}

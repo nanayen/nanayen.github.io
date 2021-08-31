@@ -1,0 +1,140 @@
+/* 手機畫面 */
+
+.phone {
+    background: linear-gradient(to right, #d194be 0%, #fcd5ce 100%);
+    padding: 5px;
+}
+
+.date-title {
+    line-height: 44px;
+    color: #fff;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.date-title p+p {
+    margin-left: 10px;
+}
+
+.title-desc {
+    font-weight: 600;
+    font-size: 44px;
+}
+
+#Year, #Month {
+    line-height: 35px;
+    font-size: 40px;
+}
+
+.divider {
+    display: block;
+    width: 70%;
+    height: 2px;
+    margin: 20px auto 30px auto;
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+    background-color: rgba(255, 255, 255, .45);
+}
+
+.week-ls, .date-week {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.week-ls {
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.week-li, .date-li {
+    width: 14.2857143%;
+}
+
+.week-li+.week-li, .date-li+.date-li {
+    margin-left: 3px;
+}
+
+.date-week+.date-week {
+    margin-top: 3px;
+}
+
+.date-li {
+    padding: 24px 2px 2px 2px;
+    background-color: rgba(255, 255, 255, 0);
+    height: 85px;
+    z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: flex-start;
+}
+
+.date-li.--show {
+    background-color: rgba(255, 255, 255, .45);
+    cursor: pointer;
+    pointer-events: all;
+    opacity: 1;
+}
+
+.edit .date-li.--choose {
+    background-color: rgba(255, 255, 255, .75);
+}
+
+.date-num {
+    color: #ac5c92;
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.date-text {
+    text-align: inherit;
+    display: block;
+    font-size: 12px;
+    color: #4f1644;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.3333;
+    width: 100%;
+}
+
+.date-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    opacity: .7;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 1;
+}
+
+#Setdate {
+    color: var(--major);
+    height: 40px;
+}
+
+#Textbox {
+    height: 70px;
+    resize: none;
+    cursor: text;
+    vertical-align: bottom;
+}
