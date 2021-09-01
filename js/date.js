@@ -28,19 +28,12 @@ $('#Apply-Setdate').click(function () {
     }
 })
 
-// 全部清空
-$('#Clear-All').click(function () {
-    $('.check').fadeIn(300);
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
-})
-
 // 選取工具
 $('#Select-None').click(function () {
     $('.--choose').removeClass('--choose');
 })
 $('#Select-All').click(function () {
-    $('.--show').addClass('--choose');
+    $('.date-li.--show').addClass('--choose');
 })
 
 // 單一日期選取
@@ -51,20 +44,14 @@ $('.date-li').click(function () {
 // 文字編輯
 $('#Apply-Settext').click(function () {
     var Text = $('#Textbox').val();
-    $('.--choose').find('.date-text').text(Text);
+    $('.--choose .date-text').text(Text);
     $('#Textbox').val('');
 })
 
 // 文字清除
 $('#Clear-Settext').click(function () {
-    $('.--choose').find('.date-text').text('');
+    $('.--choose .date-text').text('');
     $('#Textbox').val('');
-})
-
-// 格式擇一
-$('.choose-one').click(function () {
-    $(this).parent().find('.choose-one').removeClass('--click');
-    $(this).addClass('--click');
 })
 
 // 文字其他格式
@@ -74,78 +61,82 @@ $('.font-li').click(function () {
 
 // 格式設定
 $('#Apply-Setformat').click(function () {
-    var Color = $('.color').val();
-    var Size = $('.size').val() + 'px';
-    var Level = $('.level').find('.--click').val();
-    var Vertical = $('.vertical').find('.--click').val();
-    var Bold = $('.bold.--click').val();
+    var Color = $('#TextSet .color').val();
+    var Size = $('#TextSet .size').val() + 'px';
+    var Level = $('#TextSet .level').find('.--click').val();
+    var Vertical = $('#TextSet .vertical').find('.--click').val();
+    var Bold = $('#TextSet .bold.--click').val();
     if (Bold == undefined) {
         Bold = "normal";
     }
-    var Italic = $('.italic.--click').val();
+    var Italic = $('#TextSet .italic.--click').val();
     if (Italic == undefined) {
         Italic = "normal";
     }
-    var Underline = $('.underline.--click').val();
+    var Underline = $('#TextSet .underline.--click').val();
     if (Underline == undefined) {
         Underline = "none";
     }
-    $('.--choose').find('.date-text').css('color', Color);
-    $('.--choose').find('.date-text').css('font-size', Size);
-    $('.--choose').css('text-align', Level);
-    $('.--choose').css('align-items', Vertical);
-    $('.--choose').find('.date-text').css('font-weight', Bold);
-    $('.--choose').find('.date-text').css('font-style', Italic);
-    $('.--choose').find('.date-text').css('text-decoration', Underline);
+    $('.--choose').css({
+        'text-align': Level,
+        'align-items':Vertical
+    });    
+    $('.--choose .date-text').css({
+        'color':Color,
+        'font-size':Size,
+        'font-weight':Bold,
+        'font-style':Italic,
+        'text-decoration':Underline
+    });
 })
-
-// 控制表重設函數
-function FormatBox_reset() {
-    $('.color').val('#4F1644');
-    $('.size').val('12');
-    $('.format-li').removeClass('--click');
-    $('.level').find('.center').addClass('--click');
-    $('.vertical').find('.flex-start').addClass('--click');
-    $('.font-li').removeClass('--click');
-}
 
 // 格式重設
 $('#Clear-Setformat').click(function () {
-    $('.--choose').find('.date-text').css('color', '#4F1644');
-    $('.--choose').find('.date-text').css('font-size', '12px');
-    $('.--choose').css('text-align', 'center');
-    $('.--choose').css('align-items', 'flex-start');
-    $('.--choose').find('.date-text').css('font-weight', 'normal');
-    $('.--choose').find('.date-text').css('font-style', 'normal');
-    $('.--choose').find('.date-text').css('text-decoration', 'none');
-    FormatBox_reset();
+
+    $('#TextSet .color').val('#4F1644');
+    $('#TextSet .size').val('12');
+    $('#TextSet .format-li').removeClass('--click');
+    $('#TextSet .level .center').addClass('--click');
+    $('#TextSet .vertical .flex-start').addClass('--click');
+    $('#TextSet .font-li').removeClass('--click');
+
+    $('.--choose .date-text').css({
+        'color':'#4F1644',
+        'font-size':'12px',
+        'font-weight':'normal',
+        'font-style':'normal',
+        'text-decoration':'none'
+    });
+    $('.--choose').css({
+        'text-align':'center',
+        'align-items':'flex-start'
+    });
 })
 
-// 對話框，不要清空
-$('#No').click(function () {
-    $('.check').fadeOut(300);
-    document.documentElement.style.overflow = 'auto';
-    document.body.style.overflow = 'auto';
+// 物件顯示
+$('.checkbox-divider').click(function () {
+    $('.divider').toggleClass('--hide');
 })
 
-// 對話框，全部清空
-$('#Yes').click(function () {
+$('.checkbox-logo').click(function () {
+    $('#Logo').toggleClass('--hide');
+})
 
-    $('.date-text').css('color', '#4F1644');
-    $('.date-text').css('font-size', '12px');
-    $('.date-li').css('text-align', 'center');
-    $('.date-li').css('align-items', 'flex-start');
-    $('.date-text').css('font-weight', 'normal');
-    $('.date-text').css('font-style', 'normal');
-    $('.date-text').css('text-decoration', 'none');
-    FormatBox_reset();
-    $('.date-text').text('');
+$('.boarder-set').on('input', function () {
+    var BorCol = $(this).val();
+    $('.date-title').css('color',BorCol);
+    $('.week-li').css('color',BorCol);
 
-    $('.--choose').removeClass('--choose');
-    $('.check').fadeOut(300);
+    $('.date-style').remove();
+    $('.date').append('<style class="date-style">.date-li.--show::before{background-color:'+BorCol+'}</style>');
 
-    document.documentElement.style.overflow = 'auto';
-    document.body.style.overflow = 'auto';
+    $('.divider').css('background-color', BorCol);
+    $('.cls-1').css('fill', BorCol);
+})
+
+$('.datenum-set').on('input', function () {
+    var BorCol = $(this).val();
+    $('.date-num').css('color',BorCol);
 })
 
 // 匯出圖片檔
