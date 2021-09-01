@@ -74,7 +74,7 @@
 .date-li {
     padding: 24px 2px 2px 2px;
     height: 85px;
-    z-index: 1;
+    z-index: 2;
     overflow: hidden;
     pointer-events: none;
     display: flex;
@@ -95,6 +95,7 @@
     pointer-events: none;
     background-color: #fff;
     opacity: 0;
+    z-index: -1;
 }
 
 .date-li.--show::before{
@@ -108,6 +109,8 @@
 }
 
 .date-num {
+    opacity: 1;
+    z-index: 3;
     color: #ac5c92;
     position: absolute;
     top: 4px;
@@ -120,6 +123,8 @@
 }
 
 .date-text {
+    opacity: 1;
+    z-index: 3;
     text-align: inherit;
     display: block;
     font-size: 12px;
@@ -128,7 +133,7 @@
     word-break: break-all;
     line-height: 1.3333;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 #Logo {
