@@ -14,11 +14,12 @@
     <meta name="googlebot" content="noindex">
     <meta name="robots" content="noindex">
 
-    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Noto+Serif+TC&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
@@ -42,20 +43,11 @@
                     <div class="set-block-row">
                         <h1 class="title">日程表製作</h1>
                     </div>
-                </div>
-                <div class="set-block">
                     <div class="set-block-row">
-                        <span class="set-desc">日程表設定</span>
-                    </div>
-                    <div class="set-block-row">
-                        <input class="input round hover" type="month" id="Setdate">
-                        <button class="round hover btn-solid" id="Apply-Setdate">確　定</button>
-                    </div>
-                    <div class="set-block-row">
-                        <button class="round hover btn-empty" id="Clear-All">全部重設</button>
                         <button class="round hover btn-solid" id="btnSave">下載圖片</button>
                     </div>
                 </div>
+
                 <div class="set-block">
                     <div class="set-block-row">
                         <span class="set-desc">檢視工具</span>
@@ -69,6 +61,79 @@
                         <button class="round hover btn-solid" id="Move-Center">版面置中</button>
                     </div>
                 </div>
+
+                <div class="set-block">
+                    <div class="set-block-row">
+                        <span class="set-desc">日程表設定</span>
+                    </div>
+                    <div class="set-block-row">
+                        <input class="input round hover" type="month" id="Setdate">
+                        <button class="round hover btn-solid" id="Apply-Setdate">確　定</button>
+                    </div>
+                </div>
+
+                <div class="set-block">
+                    <div class="set-block-row">
+                        <span class="set-desc">背景設定</span>
+                    </div>
+                    <div class="set-block-row">
+                        <div class="format-ls back">
+                            <button value="solid"
+                                class="back-solid back-li choose-one format-li btn-ml btn-solid round hover"><img
+                                    src="/image/back_solid.svg" width="20" alt=""></button value="">
+                            <button value="gradient"
+                                class="back-gradient back-li choose-one format-li btn-ml btn-solid round hover --click"><img
+                                    src="/image/back_gradient.svg" width="20" alt=""></button value="">
+                            <button value="image"
+                                class="back-image back-li choose-one format-li btn-ml btn-solid round hover"><img
+                                    src="/image/back_image.svg" width="20" alt=""></button value="">
+                        </div>
+                    </div>
+                    <div class="set-block-row back-set">
+                        <input type="color" class="color back-set-solid btn-ml" name="color" value="#fafafa">
+                    </div>
+                    <div class="set-block-row back-set --show">
+                        <div class="format-ls">
+                            <input type="color" class="color btn-ml back-set-gradient gradient_1" name="color"
+                                value="#d194be">
+                            <input type="color" class="color btn-ml back-set-gradient gradient_2" name="color"
+                                value="#fcd5ce">
+                            <input type="number" name="" min="0" max="360"
+                                class="round size btn-ml back-set-gradient gradient_deg" value="90">
+                        </div>
+                    </div>
+                    <div class="set-block-row back-set">
+                        <button id="Img-Btn" class="round hover btn-solid">
+                            <span>上傳圖片</span>
+                        </button>
+                        <input id="Board-Img" name="progressbarTW_img" type="file"
+                            accept="image/gif, image/jpeg, image/png">
+                    </div>
+                    <div class="set-block-row set-block-div">
+                        <span class="set-desc">物件設定</span>
+                    </div>
+                    <div class="set-block-row">
+                        <input type="color" class="color btn-ml boarder-set" name="color" value="#ffffff">
+                    </div>
+                    <div class="set-block-row">
+                        <button
+                            class="checkbox-divider checkbox-btn btn-solid format-li round hover btn-ml --click"><img
+                                src="/image/checkbox.svg" width="20"></button><span
+                            class="checkbox-desc btn-ml">顯示分隔線</span>
+                    </div>
+                    <div class="set-block-row">
+                        <button class="checkbox-logo checkbox-btn btn-solid format-li round hover btn-ml --click"><img
+                                src="/image/checkbox.svg" width="20"></button><span
+                            class="checkbox-desc btn-ml">顯示商標</span>
+                    </div>
+                    <div class="set-block-row set-block-div">
+                        <span class="set-desc">日期顏色</span>
+                    </div>
+                    <div class="set-block-row">
+                        <input type="color" class="color btn-ml datenum-set" name="color" value="#ac5c92">
+                    </div>
+                </div>
+
                 <div class="set-block">
                     <div class="set-block-row">
                         <span class="set-desc">選取工具</span>
@@ -90,7 +155,7 @@
                         <button class="round hover btn-solid" id="Apply-Settext">鍵　入</button>
                     </div>
                 </div>
-                <div class="set-block">
+                <div class="set-block" id="TextSet">
                     <div class="set-block-row">
                         <span class="set-desc">格式設定</span>
                     </div>
@@ -148,15 +213,6 @@
                         <button class="round hover btn-empty" id="Clear-Setformat">預　設</button>
                         <button class="round hover btn-solid" id="Apply-Setformat">設　定</button>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="check">
-            <div class="check-border">
-                <span class="check-text">確定要清除所有文字嗎？</span>
-                <div class="btn-ls">
-                    <button class="round hover btn-empty" id="No">取　消</button>
-                    <button class="round hover btn-solid" id="Yes">確　定</button>
                 </div>
             </div>
         </div>
@@ -364,7 +420,67 @@
                             </li>
                         </ul>
                     </ul>
-                    <img class="date-logo" src="/image/logo_2.png" height="70" alt="YenYenLOGO">
+                    <div id="Logo" class="">
+                        <svg style="width: 70px;" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.46457 283.46457">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: #fff;
+                                    }
+                                </style>
+                            </defs>
+                            <path class="cls-1"
+                                d="M141.73228,238.98466c-29.47637,0-51.30283-7.82674-66.726-23.92694C56.5874,195.8301,47.63365,165.41237,47.63365,122.067S56.5874,48.30442,75.0063,29.07679c15.42315-16.10019,37.24961-23.92693,66.726-23.92693s51.30284,7.82674,66.726,23.92693c18.41889,19.22763,27.37265,49.64489,27.37265,92.99024s-8.95376,73.76307-27.37265,92.99069C193.03512,231.15792,171.20866,238.98466,141.73228,238.98466Zm0-227.16392c-27.56064,0-47.81105,7.15388-61.90849,21.87067C62.652,51.61706,54.30453,80.52481,54.30453,122.067s8.34743,70.45043,25.51926,88.37608c14.09744,14.71679,34.34785,21.87067,61.90849,21.87067s47.811-7.15388,61.90849-21.87067C220.8126,192.51746,229.16,163.60924,229.16,122.067s-8.34744-70.45-25.51927-88.37562C189.54333,18.97462,169.29292,11.82074,141.73228,11.82074Z" />
+                            <path class="cls-1"
+                                d="M96.13753,121.60642l.97566-26.23373a.27111.27111,0,0,1,.503-.12826c1.85179,2.87763,2.035,6.2929,1.90474,9.79723l-.5868,23.98086a.8104.8104,0,0,0,1.49823.448l1.92484-3.09361c2.59413-4.1692,5.00707-8.90806,5.1896-13.815l.8629-32.19163a.27145.27145,0,0,1,.50358-.13123c1.84379,2.875,2.02632,6.285,1.89622,9.784l-.34557,23.10883a.81073.81073,0,0,0,1.51894.40539q1.27126-2.28,2.378-4.24728a33.68674,33.68674,0,0,0,4.361-17.96172q-.07265-1.67018-.07408-3.42727c0-8.94469,1.57425-20.11137,2.56427-26.24984a.799.799,0,0,0-.77219-.93082c-6.214-.1416-19.73964.323-25.88591,6.54694C86.4348,75.489,84.87543,79.21937,84.23262,102.87251A228.70076,228.70076,0,0,1,78.71694,145.526a.8.8,0,0,0,1.16733.8827,39.1802,39.1802,0,0,0,7.741-5.94589C92.0737,136.22859,95.90934,127.74356,96.13753,121.60642Z" />
+                            <path class="cls-1"
+                                d="M199.232,106.68445c-.64281-23.65315-2.20218-27.38351-10.32132-35.60526-5.10372-5.16815-15.30192-6.36543-22.17329-6.54181a.79673.79673,0,0,0-.80719.86957,71.10047,71.10047,0,0,1-1.25792,21.22472,35.44035,35.44035,0,0,0,3.674,25.12541q1.42131,2.51973,3.13536,5.5918a.81059.81059,0,0,0,1.519-.40508L172.65511,93.835c-.1301-3.499.05243-6.909,1.89622-9.784a.27146.27146,0,0,1,.50358.13123l.8629,32.19162c.18253,4.90693,2.59546,9.64579,5.1896,13.815l1.92484,3.0936a.81039.81039,0,0,0,1.49822-.448l-.58679-23.98087c-.13031-3.50433.05294-6.91959,1.90474-9.79732a.27112.27112,0,0,1,.503.12825l.97566,26.23384c.22819,6.13714,4.06383,14.62216,8.51221,18.85642a39.1319,39.1319,0,0,0,7.7547,5.95348.79309.79309,0,0,0,1.15716-.87521A228.70073,228.70073,0,0,1,199.232,106.68445Z" />
+                            <path class="cls-1"
+                                d="M120.131,47.1521c2.36266,1.418,2.51984,7.719,4.72531,9.92445,0,0-3.3496,17.77785-3.3496,30.82443,0,18.91141,6.51318,30.16654,9.37214,40.41111s-2.38246,55.273,3.57369,55.03472,10.48282-5.71791,12.86528-12.627-5.24141-23.58625-6.1944-33.35433,2.85895-16.67722,12.15055-30.73373c9.29149-14.05651,11.674-29.5424,9.13266-47.25212-1.91941-13.37584-12.627-28.58941-27.21648-27.14177-9.26666.91953-13.31653,5.67768-15.05915,10.03085,0,0-8.70891,1.89027-8.70891,3.46544C111.4221,47.3098,117.76774,45.73411,120.131,47.1521Zm11.7549-7.89557a3.35622,3.35622,0,1,1-3.35627,3.35617A3.3562,3.3562,0,0,1,131.88591,39.25653Z" />
+                            <path class="cls-1"
+                                d="M171.67843,48.03069a.67462.67462,0,0,1,.03611.62671l-2.15827,4.75106a.67457.67457,0,0,0,.76625.93616l5.08391-1.177a.67449.67449,0,0,1,.60721.15935l3.85164,3.52074a.67452.67452,0,0,0,1.12711-.43945l.45166-5.19873a.67439.67439,0,0,1,.3391-.5283l4.53878-2.57515a.67446.67446,0,0,0-.06977-1.20765l-4.80473-2.03617a.67439.67439,0,0,1-.39759-.48573l-1.04655-5.11233a.67451.67451,0,0,0-1.1701-.307L175.412,42.89763a.67456.67456,0,0,1-.58484.22809l-5.18559-.58443a.67446.67446,0,0,0-.65349,1.01793Z" />
+                            <path class="cls-1"
+                                d="M113.84468,173.37074l-5.2804-7.314a1.1659,1.1659,0,0,1-.15288-1.07437l3.03153-8.49641a1.16609,1.16609,0,0,0-1.45523-1.50191L101.4,157.74593a1.1661,1.1661,0,0,1-1.069-.18663l-7.14379-5.5087a1.166,1.166,0,0,0-1.87805.92l-.02709,9.02092a1.16609,1.16609,0,0,1-.50779.959l-7.44667,5.09181a1.166,1.166,0,0,0,.29457,2.07034l8.571,2.8134a1.16614,1.16614,0,0,1,.75516.77938l2.5415,8.65555a1.166,1.166,0,0,0,2.06008.35973l5.32431-7.2822a1.16588,1.16588,0,0,1,.97453-.47731l9.01734.25763A1.166,1.166,0,0,0,113.84468,173.37074Z" />
+                            <path class="cls-1"
+                                d="M156.26448,143.43177a32.54287,32.54287,0,0,1-46.02125,46.02059.80865.80865,0,0,0-1.31676.86692,37.1669,37.1669,0,1,0,48.20509-48.20453A.8088.8088,0,0,0,156.26448,143.43177Z" />
+                            <circle class="cls-1" cx="102.41417" cy="32.65428" r="2.45535" />
+                            <circle class="cls-1" cx="74.93498" cy="115.3051" r="2.45535" />
+                            <circle class="cls-1" cx="159.95035" cy="124.92595" r="2.45535" />
+                            <circle class="cls-1" cx="81.15037" cy="187.03878" r="2.45535" />
+                            <circle class="cls-1" cx="212.80051" cy="166.25104" r="2.45535" />
+                            <circle class="cls-1" cx="67.16532" cy="131.61089" r="2.45535" />
+                            <circle class="cls-1" cx="191.31505" cy="36.06261" r="2.45535" />
+                            <circle class="cls-1" cx="70.93477" cy="66.01485" r="2.45535" />
+                            <circle class="cls-1" cx="113.11466" cy="218.76865" r="2.45535" />
+                            <circle class="cls-1" cx="201.00291" cy="62.60651" r="2.45535" />
+                            <circle class="cls-1" cx="208.39441" cy="105.90743" r="2.45535" />
+                            <circle class="cls-1" cx="200.62476" cy="193.18514" r="2.45535" />
+                            <circle class="cls-1" cx="92.91139" cy="52.82814" r="4.0002" />
+                            <circle class="cls-1" cx="68.47942" cy="90.97954" r="4.0002" />
+                            <circle class="cls-1" cx="213.75349" cy="86.97934" r="4.0002" />
+                            <circle class="cls-1" cx="217.75369" cy="129.15554" r="4.0002" />
+                            <circle class="cls-1" cx="157.495" cy="25.55664" r="4.0002" />
+                            <circle class="cls-1" cx="192.81742" cy="162.25084" r="4.0002" />
+                            <circle class="cls-1" cx="178.72979" cy="212.33276" r="4.0002" />
+                            <circle class="cls-1" cx="99.95882" cy="203.37937" r="4.0002" />
+                            <circle class="cls-1" cx="69.62067" cy="159.79549" r="4.0002" />
+                            <circle class="cls-1" cx="111.96922" cy="138.97695" r="4.0002" />
+                            <path class="cls-1"
+                                d="M99.7082,268.52944v8.99676H97.01948v-8.99676l-6.05276-8.20763h2.89874l4.49838,6.12129,4.49838-6.12129h2.87484Z" />
+                            <path class="cls-1"
+                                d="M110.81016,267.324h6.28289v2.43469h-6.28289v5.33278h7.62851v2.43469H108.12018V260.32181h10.31849v2.41142h-7.62851Z" />
+                            <path class="cls-1"
+                                d="M124.30027,266.46637V277.5262h-2.69V259.51l10.80517,11.84833V260.32181h2.71261V278.3147Z" />
+                            <path class="cls-1" d="M138.71722,270.08318v-2.31836h7.23489v2.31836Z" />
+                            <path class="cls-1"
+                                d="M157.07671,268.52944v8.99676H154.388v-8.99676l-6.05276-8.20763H151.234l4.49838,6.12129,4.49838-6.12129h2.87484Z" />
+                            <path class="cls-1"
+                                d="M168.17867,267.324h6.28289v2.43469h-6.28289v5.33278h7.62851v2.43469H165.48869V260.32181h10.31849v2.41142h-7.62851Z" />
+                            <path class="cls-1"
+                                d="M181.67,266.46637V277.5262h-2.69V259.51l10.80517,11.84833V260.32181h2.71261V278.3147Z" />
+                        </svg>
+                    </div>
+                    <img id="Image" src="">
                 </div>
             </div>
         </div>
