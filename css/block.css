@@ -92,18 +92,9 @@
 	pointer-events: none;
 }
 
-canvas {
-	display: none;
-}
-
 /* 個別設定 */
 
-#Board-Img{
-	display: none;
-}
-
 #Titlebox, #Textbox {
-	height: 70px;
 	resize: none;
 	cursor: text;
 	vertical-align: bottom;
@@ -115,22 +106,4 @@ canvas {
 
 #Textbox{
 	height: 340px;
-}
-
-.back-set{
-	display: none;
-}
-
-.back-set.--show{
-	display: block;
-}
-
-.checkbox-btn{
-	padding: 1px;
-	background-color: #cfcfcf;
-}
-
-.checkbox-desc{
-	font-size: 14px;
-	color: #777;
 }

@@ -26,6 +26,7 @@
 	position: absolute;
 	left: 1293px;
     top: 1132px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 
 .phone-box {
@@ -44,6 +45,17 @@
     --major: #6d5eb1;
     --major80per: rgba(109, 94, 177, .8);
     --minor: #a197ff;
+}
+
+#Image{
+	display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+	z-index: -1;
+	pointer-events: none;
 }
 
 canvas {
@@ -137,6 +149,10 @@ canvas {
 	margin-left: 4px;
 }
 
+.set-block-div{
+    margin-top: 20px;
+    border-top: 1px solid #bfbfbf;
+}
 /* 個別設定 */
 
 .bruce {
@@ -271,6 +287,28 @@ input[type="color"]::-webkit-color-swatch {
 
 .size:hover {
     border-color: var(--major);
+}
+
+#Board-Img{
+	display: none;
+}
+
+.back-set{
+	display: none;
+}
+
+.back-set.--show{
+	display: block;
+}
+
+.checkbox-btn{
+	padding: 1px;
+	background-color: #cfcfcf;
+}
+
+.checkbox-desc{
+	font-size: 14px;
+	color: #777;
 }
 
 /* 確認訊息 */
